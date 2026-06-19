@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Hayat Luxury Hotel & Resort | Bukhara</title>
+    <!-- Иконки FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- НАВИГАЦИОННАЯ ПАНЕЛЬ -->
+    <header id="navbar">
+        <div class="container header-wrap">
+            <a href="#" class="logo">Al Hayat<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#collection">Коллекция</a></li>
+                    <li><a href="#reviews-section">Отзывы</a></li>
+                    <li><a href="#experience">Сервис</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Зона Авторизации -->
+            <div class="auth-zone">
+                <button class="btn-lux" id="loginTriggerBtn" style="padding: 10px 25px; font-size: 13px;">Войти</button>
+                
+                <div class="user-profile-menu" id="userMenu" style="display: none;">
+                    <div class="user-avatar" id="userInitial">U</div>
+                    <span id="usernameDisplay" style="font-weight: 600; font-size: 14px;">Гость</span>
+                    <i class="fas fa-chevron-down" style="font-size: 11px; color: var(--text-muted);"></i>
+                    
+                    <!-- Выпадающее меню личного кабинета -->
+                    <div class="dropdown-profile" id="profileDropdown">
+                        <div class="dropdown-info">
+                            <h4 id="fullNameDisplay">Имя Пользователя</h4>
+                            <p id="userRoleStatus"><i class="fas fa-crown"></i> Статус: VIP Guest</p>
+                        </div>
+                        
+                        <!-- Кнопки управления для Администраторов -->
+                        <div class="dropdown-item admin-action" id="adminPanelBtn" style="display: none;"><i class="fas fa-plus-circle"></i> Добавить комнату</div>
+                        <div class="dropdown-item admin-action" id="adminUsersBtn" style="display: none; color: #10b981; border-top: none; padding-top: 0;"><i class="fas fa-users"></i> База пользователей</div>
+                        <div class="dropdown-item admin-action" id="superAdminPanelBtn" style="display: none; color: #a855f7; border-top: none; padding-top: 0;"><i class="fas fa-user-plus"></i> Создать Админа</div>
+                        <div class="dropdown-item admin-action" id="adminHistoryBtn" style="display: none; color: #3b82f6; border-top: none; padding-top: 0;"><i class="fas fa-history"></i> История броней</div>
+                        
+                        <div class="dropdown-item" id="walletRow"><i class="fas fa-wallet"></i> Бонусный баланс: $150</div>
+                        <div class="dropdown-item" id="myBookingsTrigger" style="cursor: pointer;"><i class="fas fa-concierge-bell"></i> Мои брони: <span style="margin-left:5px; color:var(--primary); font-weight: 700;" id="bookingCount">0</span></div>
+                        <div class="dropdown-item" id="logoutBtn" style="color: #ef4444;"><i class="fas fa-sign-out-alt"></i> Выйти из системы</div>
+                    </div>
+                </div>
+            </div>
+            <i class="fas fa-bars burger" id="mobileMenuBtn"></i>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero">
+        <img class="hero-video" src="img/IMG_0324.jpg" alt="Luxury Hotel">
+        <div class="hero-content">
+            <p>Премиальный курорт & SPA в Бухаре</p>
+            <h1>Определяя новый уровень<br><span>Роскоши</span></h1>
+            <a href="#collection"><button class="btn-lux">Посмотреть номера</button></a>
+        </div>
+    </section>
+
+    <!-- ИНТЕРАКТИВНАЯ СЕКЦИЯ BENTO GRID -->
+    <section class="bento-section" id="collection">
+        <div class="container">
+            <div class="section-header reveal">
+                <p>Эксклюзивный выбор</p>
+                <h2>Апартаменты и <span>Развлечения</span></h2>
+                <p style="font-size: 12px; color: #3b82f6; margin-top: 10px; display: none;" id="adminNotice"><i class="fas fa-info-circle"></i> Вы в режиме администратора. Все изменения мгновенно сохраняются локально.</p>
+            </div>
+
+            <!-- Bento сетка -->
+            <div class="bento-grid" id="mainBentoGrid">
+                
+                <!-- Статический блок: Сервис связи -->
+                <div class="bento-item bento-1x2 reveal" id="experience">
+                    <div class="bento-data" style="justify-content: flex-start; height: 100%;">
+                        <div class="bento-tag">Консьерж-сервис 24/7</div>
+                        <h3 class="bento-title" style="font-size: 28px; margin-bottom: 15px;">Связь с нами</h3>
+                        <p class="bento-desc" style="font-size: 14px;">Забронируйте столик, оформите трансфер или задайте любой вопрос консьерж-службе в Бухаре.</p>
+                        
+                        <div class="service-links">
+                            <a href="https://instagram.com/alhayat_hotel_bukhara" target="_blank" class="service-link-item">
+                                <i class="fab fa-instagram"></i><span>alhayat_hotel_bukhara</span>
+                            </a>
+                            <a href="https://t.me/alhayat_hotel" target="_blank" class="service-link-item">
+                                <i class="fab fa-telegram"></i><span>@alhayat_hotel</span>
+                            </a>
+                            <a href="tel:+998918231424" class="service-link-item">
+                                <i class="fas fa-phone-alt"></i><span>+998-91-823-14-24</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Статический блок: Ресторан -->
+                <div class="bento-item bento-2x1 reveal">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" class="bento-bg" alt="Gourmet">
+                    <div class="bento-data">
+                        <div class="bento-tag">Гастрономия</div>
+                        <h3 class="bento-title">Ресторан «Золотой Шафран»</h3>
+                        <p class="bento-desc">Шедевры высокой кухни от шеф-поваров, награжденных звездами Мишлен.</p>
+                    </div>
+                </div>
+
+                <!-- Сюда JavaScript выводит номера -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- РАЗДЕЛ ОТЗЫВОВ -->
+    <section class="reviews-section" id="reviews-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <p>Отзывы наших гостей</p>
+                <h2>Искренние <span>Впечатления</span></h2>
+            </div>
+
+            <!-- Блок формы для отзывов -->
+            <div class="review-form-container reveal" id="reviewFormBlock">
+                <div id="reviewAuthLock" class="review-lock-msg">
+                    <p><i class="fas fa-lock"></i> Чтобы оставить отзыв об отеле, пожалуйста, <span id="reviewLoginLink" style="color:var(--primary); font-weight:700; cursor:pointer; text-decoration:underline;">войдите в свой аккаунт</span>.</p>
+                </div>
+                
+                <form id="addReviewForm" style="display: none;">
+                    <h3>Оставить свой отзыв</h3>
+                    <div class="rating-select">
+                        <label>Ваша оценка:</label>
+                        <select id="reviewStars" required>
+                            <option value="5">⭐⭐⭐⭐⭐ (5 из 5)</option>
+                            <option value="4">⭐⭐⭐⭐ (4 из 5)</option>
+                            <option value="3">⭐⭐⭐ (3 из 5)</option>
+                            <option value="2">⭐⭐ (2 из 5)</option>
+                            <option value="1">⭐ (1 из 5)</option>
+                        </select>
+                    </div>
+                    <div class="field" style="background: rgba(255,255,255,0.03); margin-bottom: 15px;">
+                        <i class="fas fa-comment-alt" style="margin-top: 15px;"></i>
+                        <textarea id="reviewText" required placeholder="Поделитесь вашими впечатлениями об отдыхе в Al Hayat Bukhara..." style="height: 100px; padding-top: 12px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-lux" style="border-radius: 8px; padding: 12px 30px;">Опубликовать отзыв</button>
+                </form>
+            </div>
+
+            <!-- Сетка отзывов -->
+            <div class="reviews-grid" id="reviewsContainer"></div>
+        </div>
+    </section>
+
+    <!-- ВСЕ МОДАЛЬНЫЕ ОКНА -->
+    
+    <!-- 1. АВТОРИЗАЦИЯ -->
+    <div class="modal" id="authModal">
+        <div class="modal-body" id="loginBox">
+            <span class="close-modal">&times;</span>
+            <h3>Добро пожаловать</h3>
+            <p style="font-size: 12px; text-align: center; margin-bottom: 20px; color: var(--text-muted)">Главный админ: admin@alhayat.com / admin123</p>
+            <form id="loginFormAction">
+                <div class="field"><i class="fas fa-envelope"></i><input type="email" id="loginEmail" required placeholder="Ваш Email"></div>
+                <div class="field"><i class="fas fa-lock"></i><input type="password" id="loginPass" required placeholder="Пароль"></div>
+                <button type="submit" class="btn-lux" style="width: 100%; border-radius:12px;">Войти в систему</button>
+                <div class="modal-footer" style="text-align: center; margin-top: 15px; font-size: 13px;">
+                    Нет учетной записи? <span id="jumpToRegister" style="color:var(--primary); font-weight:700; cursor:pointer;">Создать её</span>
+                </div>
+            </form>
+        </div>
+        <div class="modal-body" id="registerBox" style="display: none;">
+            <span class="close-modal">&times;</span>
+            <h3>Регистрация VIP</h3>
+            <form id="registerFormAction">
+                <div class="field"><i class="fas fa-user"></i><input type="text" id="regName" required placeholder="Ваше Имя и Фамилия"></div>
+                <div class="field"><i class="fas fa-envelope"></i><input type="email" id="regEmail" required placeholder="Email адрес"></div>
+                <div class="field"><i class="fas fa-lock"></i><input type="password" id="regPass" required placeholder="Надежный пароль"></div>
+                <button type="submit" class="btn-lux" style="width: 100%; border-radius:12px;">Зарегистрироваться</button>
+                <div class="modal-footer" style="text-align: center; margin-top: 15px; font-size: 13px;">
+                    Уже зарегистрированы? <span id="jumpToLogin" style="color:var(--primary); font-weight:700; cursor:pointer;">Войти</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. ДОБАВЛЕНИЕ НОМЕРА -->
+    <div class="modal" id="adminModal">
+        <div class="modal-body">
+            <span class="close-modal">&times;</span>
+            <h3>Добавить <span>Номер</span></h3>
+            <form id="addRoomForm">
+                <div class="field"><i class="fas fa-hotel"></i><input type="text" id="roomTitle" required placeholder="Название номера"></div>
+                <div class="field"><i class="fas fa-dollar-sign"></i><input type="number" id="roomPrice" required placeholder="Цена за ночь в $"></div>
+                <div class="field file-field">
+                    <i class="fas fa-image"></i>
+                    <label for="roomImg" class="file-label"><span id="fileLabelText">Выбрать фото устройства</span></label>
+                    <input type="file" id="roomImg" accept="image/*" required style="display: none;">
+                </div>
+                <div class="field"><i class="fas fa-align-left"></i><textarea id="roomDesc" required placeholder="Описание номера..."></textarea></div>
+                <button type="submit" class="btn-lux btn-admin-submit" style="width: 100%; border-radius:12px;">Опубликовать на сайт</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 3. РЕДАКТИРОВАНИЕ НОМЕРА -->
+    <div class="modal" id="editModal">
+        <div class="modal-body">
+            <span class="close-modal">&times;</span>
+            <h3 style="color: #3b82f6;">Изменить <span>Данные</span></h3>
+            <form id="editRoomForm">
+                <input type="hidden" id="editTargetId">
+                <div class="field"><i class="fas fa-hotel"></i><input type="text" id="editRoomTitle" required placeholder="Изменить название"></div>
+                <div class="field"><i class="fas fa-dollar-sign"></i><input type="number" id="editRoomPrice" required placeholder="Изменить цену"></div>
+                <div class="field file-field">
+                    <i class="fas fa-image"></i>
+                    <label for="editRoomImg" class="file-label"><span id="editFileLabelText">Заменить фото (опционально)</span></label>
+                    <input type="file" id="editRoomImg" accept="image/*" style="display: none;">
+                </div>
+                <div class="field"><i class="fas fa-align-left"></i><textarea id="editRoomDesc" required placeholder="Изменить описание..."></textarea></div>
+                <button type="submit" class="btn-lux" style="width: 100%; border-radius:12px; background: #3b82f6; color: white;">Сохранить изменения</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 4. СОХРАНЕНИЕ АДМИНОВ -->
+    <div class="modal" id="createAdminModal">
+        <div class="modal-body">
+            <span class="close-modal">&times;</span>
+            <h3 style="color: #a855f7;">Создать <span>Администратора</span></h3>
+            <form id="createAdminForm">
+                <div class="field"><i class="fas fa-user-shield"></i><input type="text" id="newAdminName" required placeholder="Имя нового администратора"></div>
+                <div class="field"><i class="fas fa-envelope"></i><input type="email" id="newAdminEmail" required placeholder="Email для входа"></div>
+                <div class="field"><i class="fas fa-lock"></i><input type="password" id="newAdminPass" required placeholder="Пароль администратора"></div>
+                <button type="submit" class="btn-lux" style="width: 100%; border-radius:12px; background: #a855f7; color: white;">Зарегистрировать Админа</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 5. БАЗА ПОЛЬЗОВАТЕЛЕЙ -->
+    <div class="modal" id="usersModal">
+        <div class="modal-body modal-wide">
+            <span class="close-modal">&times;</span>
+            <h3 style="color: #10b981;">База <span>Пользователей сайта</span></h3>
+            <div class="table-responsive">
+                <table class="booking-table">
+                    <thead>
+                        <tr><th>Имя Фамилия</th><th>Email адрес</th><th>Пароль (Хранилище)</th><th>Роль в системе</th></tr>
+                    </thead>
+                    <tbody id="usersTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. ИСТОРИЯ БРОНИРОВАНИЙ ДЛЯ АДМИНИСТРАЦИИ (ОБНОВЛЁННАЯ) -->
+    <div class="modal" id="historyModal">
+        <div class="modal-body modal-wide scrollable-modal-body">
+            <span class="close-modal">&times;</span>
+            <h3>История <span>Всех Бронирований Отеля</span></h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Полная информация: кто, какой номер, контактные данные и детальный расчёт суток</p>
+            <div class="table-responsive">
+                <table class="booking-table">
+                    <thead>
+                        <tr>
+                            <th>Данные Клиента</th>
+                            <th>Выбранный Номер</th>
+                            <th>Период проживания</th>
+                            <th>Кол-во суток</th>
+                            <th>Итоговая сумма</th>
+                            <th>Статус системы</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. АНИМИРОВАННОЕ ОКНО "МОИ БРОНИ" С ПОДДЕРЖКОЙ СКРОЛЛА -->
+    <div class="modal" id="myBookingsModal">
+        <div class="modal-body modal-wide user-bookings-modal scrollable-modal-body">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-concierge-bell" style="color: var(--primary); margin-right: 10px;"></i> Ваши <span>Бронирования</span></h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Список ваших активных заказов и дат проживания в Al Hayat Hotel</p>
+            
+            <div class="table-responsive">
+                <table class="booking-table">
+                    <thead>
+                        <tr>
+                            <th>Номер / Апартаменты</th>
+                            <th>Даты проживания</th>
+                            <th>Количество суток</th>
+                            <th>Итоговая стоимость</th>
+                            <th>Статус заказа</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myBookingsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <div class="container">
+            <div class="logo">Al Hayat<span>.</span></div>
+            <p style="color: var(--primary); margin-bottom: 15px; font-weight:600;">Бухара, Узбекистан</p>
+            <p>&copy; 2026 Премиальная экосистема отелей Al Hayat Group. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
